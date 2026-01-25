@@ -24,11 +24,24 @@
 * **22. 파일 업로드 (File Upload)** - [Server-Side] 서버 장악 방지 및 웹쉘(Webshell) 차단 시큐어 코딩
     * *Deep Dive: 2026년 가이드라인(FU-14) 기준의 통합 보안 전략 분석 포함*
 
-### 4. 인증 및 권한 관리 (Authentication & Authorization)
-* **13. 불충분한 인증 (Insufficient Authentication)** - 중요 페이지 접근 통제 및 세션 검증 로직 구현 (Forceful Browsing 방어)
+### 4. 인증, 권한 및 세션 관리 (Auth & Session Management)
+* **13. 불충분한 인증 (Insufficient Authentication)** - 중요 페이지 접근 통제 및 세션 검증 로직 구현
     * *Deep Dive: 21년(단순 인증 여부) vs 26년(인증 절차의 무결성 및 우회 방지) 기준 비교 분석*
 * **14. 취약한 패스워드 복구 (Weak Password Recovery)** - 비밀번호 노출 방지 및 재설정 로직의 무결성 검증
-    * *Deep Dive: 응답값(Response) 변조 및 파라미터 조작(IDOR)을 통한 인증 우회 시나리오 분석*
+    * *Deep Dive: 응답값(Response) 변조 및 파라미터 조작을 통한 인증 우회 시나리오*
+* **16. 취약한 세션 예측 (Predictable Session ID)** - `SecureRandom` 사용 및 예측 불가능한 세션 ID 생성 원리
+    * *Deep Dive: `java.util.Random` vs `SecureRandom` 의 난수 생성 메커니즘(PRNG vs CSPRNG) 차이 분석*
+* **17. 불충분한 인가 (Insufficient Authorization)** - URL 접근 제어 및 데이터 소유권 검증 (IDOR)
+    * *Deep Dive: 21년(페이지 접근) vs 26년(데이터 및 기능 레벨 검증) 기준 비교 및 파라미터 변조 공격*
+* **18. 불충분한 세션 만료 (Insufficient Session Expiration)** - 로그아웃 시 `session.invalidate()` 필수 적용 및 좀비 세션 방지
+    * *Deep Dive: JWT 환경에서의 로그아웃 처리(Blacklist) 및 세션 생명주기 검증*
+* **19. 세션 고정 (Session Fixation)** - 로그인 시 세션 재발급(Migration) 및 URL Rewriting 차단
+
+### 5. 서비스 및 비즈니스 로직 (Service & Business Logic)
+* **20. 자동화 공격 (Automated Attack)** - CAPTCHA 적용, 계정 잠금(Lockout) 및 요청 속도 제한(Rate Limit)
+
+* **21. 불충분한 프로세스 검증 (Insufficient Process Validation)** - 순차적 로직(Step) 상태 검증 및 중요 기능(결제 등) 우회 차단
+
 
 ---
 
