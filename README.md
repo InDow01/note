@@ -24,6 +24,12 @@
 * **22. 파일 업로드 (File Upload)** - [Server-Side] 서버 장악 방지 및 웹쉘(Webshell) 차단 시큐어 코딩
     * *Deep Dive: 2026년 가이드라인(FU-14) 기준의 통합 보안 전략 분석 포함*
 
+### 4. 인증 및 권한 관리 (Authentication & Authorization)
+* **13. 불충분한 인증 (Insufficient Authentication)** - 중요 페이지 접근 통제 및 세션 검증 로직 구현 (Forceful Browsing 방어)
+    * *Deep Dive: 21년(단순 인증 여부) vs 26년(인증 절차의 무결성 및 우회 방지) 기준 비교 분석*
+* **14. 취약한 패스워드 복구 (Weak Password Recovery)** - 비밀번호 노출 방지 및 재설정 로직의 무결성 검증
+    * *Deep Dive: 응답값(Response) 변조 및 파라미터 조작(IDOR)을 통한 인증 우회 시나리오 분석*
+
 ---
 
 ## 🛠️ 기술 스택 (Tech Stack)
